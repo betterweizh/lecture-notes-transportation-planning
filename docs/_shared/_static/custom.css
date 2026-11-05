@@ -1,0 +1,152 @@
+/* House style on top of sphinx-book-theme. */
+
+/* ---- Heading sizes (h1 = chapter title) -------------------------------- */
+:root {
+  --pst-font-size-h1: 2.2rem;
+  --pst-font-size-h2: 1.5rem;
+  --pst-font-size-h3: 1.3rem;
+  --pst-font-size-h4: 1.2rem;
+  --pst-font-size-h5: 1.1rem;
+  --pst-font-size-h6: 1rem;
+  --lntp-accent: #2a6db0;
+  --lntp-solution: #2e8b57;
+  --lntp-muted: #8a8f98;
+}
+html[data-theme="dark"] {
+  --lntp-accent: #79b0ef;
+  --lntp-solution: #6fcf97;
+  --lntp-muted: #6b717b;
+}
+
+/* ---- Language switch --------------------------------------------------- */
+.lang-switch__link.btn {
+  color: var(--pst-color-text-muted);
+}
+.lang-switch__link.btn:hover {
+  color: var(--pst-color-secondary);
+}
+
+/* ---- Mathematics: wide displays scroll instead of widening the page ---- */
+.bd-article .math-wrapper,
+.bd-article div.math,
+div.body div.math {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+/* contain the visually hidden (absolutely positioned) assistive MathML */
+div.math,
+span.math {
+  position: relative;
+}
+
+/* ---- Tables ------------------------------------------------------------ */
+.bd-article table.table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+table.docutils td,
+table.docutils th,
+.bd-article table.table td,
+.bd-article table.table th {
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 760px) {
+  div.body table.docutils {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  /* long inline formulas scroll instead of widening the page */
+  span.math {
+    display: inline-block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    vertical-align: middle;
+  }
+}
+
+/* ---- Long URLs (references) wrap ---------------------------------------- */
+a.reference.external {
+  overflow-wrap: anywhere;
+}
+
+/* ---- Proof-style boxes (sphinx-proof) and learning objectives --------- */
+div.proof.admonition,
+div.theorem.admonition,
+div.lemma.admonition,
+div.proposition.admonition,
+div.corollary.admonition,
+div.definition.admonition,
+div.algorithm.admonition,
+div.example.admonition,
+div.property.admonition,
+div.assumption.admonition,
+div.remark.admonition,
+div.admonition.objectives {
+  border-left-color: var(--lntp-accent);
+}
+.objectives > .admonition-title {
+  font-weight: 700;
+}
+
+/* ---- Folded proofs ----------------------------------------------------- */
+details.sd-dropdown.proof {
+  border-left: 3px solid var(--lntp-muted);
+}
+details.sd-dropdown.proof > summary {
+  font-style: italic;
+}
+details.sd-dropdown.proof > .sd-summary-content::after {
+  content: "∎";
+  display: block;
+  text-align: right;
+  color: var(--lntp-muted);
+}
+
+/* ---- Folded solutions -------------------------------------------------- */
+details.sd-dropdown.solution {
+  border-left: 4px solid var(--lntp-solution);
+}
+details.sd-dropdown.solution > summary {
+  font-weight: 700;
+}
+details.sd-dropdown.solution > summary .sd-summary-up,
+details.sd-dropdown.solution > summary .sd-summary-down {
+  color: var(--lntp-solution);
+}
+
+/* ---- Figures ----------------------------------------------------------- */
+figure,
+div.figure {
+  text-align: center;
+}
+figure img,
+div.figure img {
+  max-width: 100%;
+  height: auto;
+}
+figure figcaption,
+div.figure p.caption {
+  color: var(--pst-color-text-muted, #6b6b6b);
+}
+figure figcaption .caption-number,
+div.figure p.caption .caption-number {
+  font-weight: 700;
+}
+/* Line art and plots are inverted in dark mode; photographs carry no class. */
+html[data-theme="dark"] img.dark-light {
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* ---- Article header: language switch on the same row as the buttons --- */
+.header-article-items__end {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.header-article-items__end .header-article-item {
+  display: flex;
+  align-items: center;
+}

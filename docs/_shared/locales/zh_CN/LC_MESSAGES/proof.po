@@ -1,0 +1,56 @@
+# Chinese names of the sphinx-proof blocks for this book.
+# Loaded by _ext/proof_zh.py before sphinx-proof, so that examples read
+# "例 3.1" (Chinese textbook usage) rather than sphinx-proof's "例子 3.1".
+# Compile with:  pybabel compile -d docs/_shared/locales -D proof -l zh_CN
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh_CN\n"
+
+msgid "Algorithm"
+msgstr "算法"
+
+msgid "Assumption"
+msgstr "假设"
+
+msgid "Axiom"
+msgstr "公理"
+
+msgid "Conjecture"
+msgstr "猜想"
+
+msgid "Corollary"
+msgstr "推论"
+
+msgid "Criterion"
+msgstr "准则"
+
+msgid "Definition"
+msgstr "定义"
+
+msgid "Example"
+msgstr "例"
+
+msgid "Lemma"
+msgstr "引理"
+
+msgid "Notation"
+msgstr "记号"
+
+msgid "Observation"
+msgstr "观察"
+
+msgid "Property"
+msgstr "性质"
+
+msgid "Proposition"
+msgstr "命题"
+
+msgid "Remark"
+msgstr "注"
+
+msgid "Theorem"
+msgstr "定理"
+
+msgid "Proof"
+msgstr "证明"
